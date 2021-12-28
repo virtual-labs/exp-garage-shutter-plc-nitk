@@ -1,13 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
+<meta charset="UTF-8">
+<title>SOLVE</title>
+<link rel="stylesheet" href="css/garage.css" />
+<script type="text/javascript" src="js/garage.js"></script>
+<script>
+var simsubscreennum=0;
+var temp=0;
+</script>
 </head>
-<body>
-		<!-- Your code goes here-->
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+<body style="margin:0; font-family:verdana; color:#ffffff;">
+<div id="simscreen">
+<div id="title"><h3>Garage Shutter Opening and Closing Using PLC</h3></div>
+
+<div class="simsubscreen">
+	<!--led -->
+	<div id="ajar" style="position:absolute; left:410px; top:335px; background: radial-gradient(#E3F1F7 10%, #3B95B9); width:19px; height:18px; border-radius:11px; border:2px solid #3B95B9;"></div>
+	<div id="open" style="position:absolute; left:410px; top:361px; background: radial-gradient(#E3F1F7 10%, #3B95B9); width:19px; height:18px; border-radius:11px; border:2px solid #3B95B9;"></div>
+	<div id="close" style="position:absolute; left:410px; top:385px; background: radial-gradient(#ED0000 2.5%, #000000); width:19px; height:18px; border-radius:11px; border:2px solid #3E0000;" ></div>
+	
+	<div style="position:absolute; left:206.5px; top:210px; width:125px; height:225px; background-color:#fff;"></div>
+	<img id="shutter" style="position:absolute; left:206.5px; top:210px; width:125px; height:225px;" src="images/shutterFull.png" />
+	<img style="position:absolute; left:206.5px; top:205px; width:125px;" src="images/frame.png" />
+	<img style="position:absolute; left:2.5px; top:0px;" src="images/1.png" />
+	<img style="position:absolute; left:470px; top:7.5px;" src="images/2.png" />
+	<img style="position:absolute; left:475px; top:7.5px;" src="images/3.png" />
+	
+	<div id="bit1" class="bits" style="position:absolute; left:530px; top:105px; ">I:1/2</div>
+	<div id="bit2" class="bits" style="position:absolute; left:615px; top:105px; ">I:1/0</div>
+	<div id="bit3" class="bits" style="position:absolute; left:685px; top:105px; ">O:2/1</div>
+	<div id="bit4" class="bits" style="position:absolute; left:729px; top:105px; ">I:1/3</div>
+	<div id="bit5" class="bits" style="position:absolute; left:770px; top:105px; ">I:1/1</div>
+	<div id="bit6" class="bits" style="position:absolute; left:613px; top:156px; ">O:2/0</div>
+	
+	<div id="bit7" class="bits" style="position:absolute; left:530px; top:203.5px; ">I:1/2</div>
+	<div id="bit8" class="bits" style="position:absolute; left:577.5px; top:203.5px;">I:1/4</div>
+	<div id="bit9" class="bits" style="position:absolute; left:647.5px; top:204.5px; ">I:1/1</div>
+	<div id="bit10" class="bits" style="position:absolute; left:724px; top:203.5px; ">O:2/0</div>
+	<div id="bit11" class="bits" style="position:absolute; left:770px; top:203.5px; ">I:1/0</div>
+	<div id="bit12" class="bits" style="position:absolute; left:646px; top:255.5px; ">O:2/1</div>
+	
+	<div id="bit13" class="bits" style="position:absolute; left:569px; top:273px; ">I:1/3</div>
+	<div id="bit14" class="bits" style="position:absolute; left:569px; top:334px; ">I:1/4</div>
+	<div id="bit15" class="bits" style="position:absolute; left:569px; top:394px; ">I:1/3</div>
+	<div id="bit16" class="bits" style="position:absolute; left:662.5px; top:394px; ">I:1/4</div>
+
+	<div id="op1" class="output" style="position:absolute; left:839px; top:122.5px; visibility:hidden;"></div>
+	<div id="op2" class="output" style="position:absolute; left:839.5px; top:222px; visibility:hidden;"></div>
+	<div id="op3" class="output" style="position:absolute; left:837.5px; top:292px; visibility:hidden;"></div>
+	<div id="op4" class="output" style="position:absolute; left:839px; top:355px; visibility:hidden;"></div>
+	<div id="op5" class="output" style="position:absolute; left:839.5px; top:414.5px; visibility:hidden;"></div>
+
+	<button id="openBtn" style="position:relative; left:94.5px; top:325px; width:21.5px; height:19px; border-radius:11px; cursor:pointer; border-color:#939393; background-color:transparent;" onclick="openShutter();"></button>
+	
+	<button id="closeBtn" style="position:absolute; left:94.5px; top:356.5px; width:21.5px; height:19px; border-radius:11px; cursor:pointer; border-color:#4EB677; background-color:transparent;" onclick="closeShutter();" disabled></button>
+	
+	<button id="stopBtn" style="position:absolute; left:95px; top:383px; width:21px; height:18.5px; border-radius:11px; cursor:pointer; border-color:#E95B5B; background-color:transparent;" onclick="stop();" disabled></button>
+	<p id="msg" style="position:absolute; left:220px; top:425px; color:yellow; font-size:14px; font-weight:bold; visibility:hidden;">Please wait.</p>
+</div>
+
+<div id="copyright"> &copy; 2020 - <script>document.write(new Date().getFullYear())</script> SOLVE - The Virtual Lab @ NITK Surathkal</div>
+
+</div>
 </body>
 </html>
