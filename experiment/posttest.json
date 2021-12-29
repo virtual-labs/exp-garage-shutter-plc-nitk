@@ -155,7 +155,7 @@
       "difficulty": ""
     },
     {
-      "question": "<img src='images/garage/q1.gif' height='250' width='250' />The above figure represents a micro switch (limit switch), it has one normally open connection (N.O) and one normally closed connection (N.C). The connection between terminal1 and terminal2 is ________ and connection between terminal1 and terminal3 is _________.",
+      "question": "<img src='images/q1.gif' height='250' width='250' /><br>The above figure represents a micro switch (limit switch), it has one normally open connection (N.O) and one normally closed connection (N.C). The connection between terminal1 and terminal2 is ________ and connection between terminal1 and terminal3 is _________.",
       "answers": {
         "a": "Normally open, normally closed",
         "b": "Normally closed, normally open",
